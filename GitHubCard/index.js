@@ -81,7 +81,33 @@ function gitHub(item) {
   cardInfo.classList.add('card-info');
   name.classList.add('name');
   userName.classList.add('username');
+
+  card.appendChild(cardInfo);
+  card.appendChild(img);
+  cardInfo.appendChild(name);
+  cardInfo.appendChild(userName);
+  cardInfo.appendChild(userLocation);
+  cardInfo.appendChild(profile);
+  cardInfo.appendChild(userGithub);
+  cardInfo.appendChild(followers);
+  cardInfo.appendChild(bio);
+  profile.appendChild(userGithub);
+
+  img.src = item.avatar_url;
+  userGithub.href = item.html_url;
+
+  name.textContent = item.name;
+  userName.textContent = item.login;
+  userLocation.textContent = item.location;
+  followers.textContent = `Followers: ${item.followers}`;
+  following.textContent = `Following: ${item.following}`;
+  bio.textContent = `Bio: ${item.bio}`;
+  userGithub.textContent = `Github Page: ${item.html_url}`;
+
+  return card;
 }
+
+const enter = document.querySelector('.cards');
 
 /*
   List of LS Instructors Github username's:
